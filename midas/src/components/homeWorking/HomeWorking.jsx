@@ -64,7 +64,7 @@ const Wrapper = styled.div`
 
 const ChoiceBarWrapper = styled.div`
   display: flex;
-  margin-top: 30px;
+  margin-top: 120px;
 `;
 
 const ApprovalContent = styled.div`

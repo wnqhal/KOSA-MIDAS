@@ -21,7 +21,12 @@ const AdminHeader = () => {
         >
           <p id="home">재택 근무</p>
         </Link>
-        <p id="paradice">휴가</p>
+        <Link
+          to="/admin-vacation"
+          style={{ textDecoration: "none", color: "#000000" }}
+        >
+          <p id="paradice">휴가</p>
+        </Link>
         <p id="intro">안녕하세요 관리자</p>
         <p id="name">OOO 님</p>
       </Header>

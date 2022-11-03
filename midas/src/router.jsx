@@ -4,6 +4,7 @@ import MeetingPage from "./pages/meeting/MeetingPage";
 import HomeWorkingPage from "./pages/homeWorking/HomeWorkingPage";
 import HomeApprovalPage from "./pages/homeWorking/HomeApprovalPage";
 import HomeReportPage from "./pages/homeWorking/HomeReportPage";
+import AdminVacationPage from "./pages/Vacation/AdminVacationPage";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="/admin-homeworking" element={<HomeWorkingPage />} />
         <Route path="/homeapproval/:id" element={<HomeApprovalPage />} />
         <Route path="/homereport/:id" element={<HomeReportPage />} />
+        <Route path="/admin-vacation" element={<AdminVacationPage />} />
       </Routes>
     </BrowserRouter>
   );
