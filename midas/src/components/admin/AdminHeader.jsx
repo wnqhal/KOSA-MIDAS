@@ -15,7 +15,12 @@ const AdminHeader = () => {
         >
           <p id="meeting">회의</p>
         </Link>
-        <p id="home">재택 근무</p>
+        <Link
+          to="/admin-homeworking"
+          style={{ textDecoration: "none", color: "#000000" }}
+        >
+          <p id="home">재택 근무</p>
+        </Link>
         <p id="paradice">휴가 및 연차</p>
         <p id="intro">안녕하세요 관리자</p>
         <p id="name">OOO 님</p>
