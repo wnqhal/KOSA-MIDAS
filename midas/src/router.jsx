@@ -8,6 +8,7 @@ import AdminVacationPage from "./pages/Vacation/AdminVacationPage";
 import LoginPage from "./pages/login/LoginPage";
 import HomePage from "./pages/home/HomePage";
 import SignUpPage from "./pages/signUp/SignUpPage";
+import UserHomeWorkingPage from "./pages/homeWorking/UserHomeWorkingPage";
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/meeting" element={<MeetingPage />} />
+        <Route path="/homeworking" element={<UserHomeWorkingPage />} />
         <Route path="/admin-homeworking" element={<HomeWorkingPage />} />
         <Route path="/homeapproval/:id" element={<HomeApprovalPage />} />
         <Route path="/homereport/:id" element={<HomeReportPage />} />
