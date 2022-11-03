@@ -74,7 +74,8 @@ const ApprovalContent = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid #d9d9d9;
-  background-color: ${({ choice }) => (choice ? "#d9d9d9" : "#ffffff")};
+  color: ${({ choice }) => (choice ? "#ffffff" : "#000000")};
+  background-color: ${({ choice }) => (choice ? "#1C6DE8" : "#ffffff")};
   cursor: pointer;
   > p {
     font-size: 20px;
@@ -88,7 +89,8 @@ const ReportContent = styled.div`
   width: 500px;
   height: 50px;
   border: 1px solid #d9d9d9;
-  background-color: ${({ choice }) => (choice ? "#ffffff" : "#d9d9d9")};
+  color: ${({ choice }) => (choice ? "#000000" : "#ffffff")};
+  background-color: ${({ choice }) => (choice ? "#ffffff" : "#1C6DE8")};
   cursor: pointer;
   > p {
     font-size: 20px;
@@ -109,7 +111,7 @@ const ApprovalItem = styled.div`
   display: flex;
   justify-content: space-between;
   width: 984px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #1c6de8;
   padding: 0px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -125,7 +127,7 @@ const ReportItem = styled.div`
   width: 984px;
   padding: 0 10px;
   border-radius: 5px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #1c6de8;
   cursor: pointer;
   > p {
     margin-left: 30px;

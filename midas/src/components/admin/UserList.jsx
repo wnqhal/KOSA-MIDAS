@@ -15,7 +15,6 @@ const UserList = () => {
           MENU
           <Dropcontent>
             <Content>출근</Content>
-            <Content>업무 중</Content>
             <Content>자리 비움</Content>
             <Content>재택 근무</Content>
             <Content>퇴근</Content>
@@ -61,24 +60,25 @@ const TypeMenu = styled.div`
       margin-right: 15px;
       padding-left: 5px;
       border-radius: 10px;
-      border: 1px solid gray;
+      border: 1px solid #0051cb;
     }
     > button {
       width: 50px;
       height: 40px;
       cursor: pointer;
-      border: 1px solid gray;
+      border: 1px solid #0051cb;
       background-color: white;
       border-radius: 10px;
       :hover {
         color: white;
-        background-color: black;
+        background-color: #0051cb;
       }
     }
   }
 `;
 
 export const Dropdown = styled.div`
+  align-items: center;
   position: relative;
   display: inline-block;
   cursor: pointer;

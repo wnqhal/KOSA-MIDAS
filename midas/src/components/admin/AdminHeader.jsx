@@ -29,6 +29,7 @@ const AdminHeader = () => {
         </Link>
         <p id="intro">안녕하세요 관리자</p>
         <p id="name">OOO 님</p>
+        <button>출근</button>
       </Header>
       <hr />
     </Wrapper>
@@ -66,6 +67,16 @@ const Header = styled.header`
   }
   #name {
     font-size: 20px;
+    margin-right: 20px;
+  }
+  > button {
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #1c6de8;
   }
 `;
 

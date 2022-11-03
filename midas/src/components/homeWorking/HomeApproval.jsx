@@ -49,7 +49,7 @@ const DateWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d9d9d9;
+  background-color: #f0f4f9;
   margin-left: 100px;
   > p {
     margin-left: 20px;
@@ -102,7 +102,7 @@ const ReasonWrapper = styled.div`
   margin-left: 100px;
   width: 1310px;
   height: 500px;
-  background-color: #d9d9d9;
+  background-color: #f0f4f9;
 `;
 
 export default HomeApproval;

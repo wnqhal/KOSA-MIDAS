@@ -6,19 +6,23 @@ const AdminVacation = () => {
   return (
     <Wrapper>
       <AdminHeader />
-      <Title>휴가</Title>
-      <hr />
-      <VacationList>
-        <VacationItem>
-          <VacationName>OOO님의 가족 돌봄 휴가</VacationName>
-          <VacationBtn>승인</VacationBtn>
-        </VacationItem>
-      </VacationList>
+      <ContentWrapper>
+        <Title>휴가</Title>
+        <hr />
+        <VacationList>
+          <VacationItem>
+            <VacationName>OOO님의 가족 돌봄 휴가</VacationName>
+            <VacationBtn>승인</VacationBtn>
+          </VacationItem>
+        </VacationList>
+      </ContentWrapper>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.div``;
+
+const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

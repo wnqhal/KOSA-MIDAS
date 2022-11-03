@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 20px;
-  border: 1px solid black;
+  border: 1px solid #0051cb;
   border-radius: 10px;
   margin-left: 190px;
   margin-top: 20px;

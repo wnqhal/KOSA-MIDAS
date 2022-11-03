@@ -76,11 +76,11 @@ const InputWrapperOne = styled.div`
     justify-content: center;
     align-items: center;
     width: 385px;
-    height: 60px;
+    height: 70px;
     margin-left: 180px;
     margin-right: 30px;
     border-radius: 15px;
-    background-color: #d9d9d9;
+    background-color: #f0f4f9;
     .showDate {
       width: 120px;
       height: 40px;
@@ -100,7 +100,7 @@ const InputWrapperOne = styled.div`
     height: 70px;
     margin-right: 30px;
     border-radius: 15px;
-    background-color: #d9d9d9;
+    background-color: #f0f4f9;
     > p {
       margin-left: 70px;
     }
@@ -122,7 +122,7 @@ const MeetingContent = styled.textarea`
   margin-left: 180px;
   margin-top: 30px;
   border-radius: 15px;
-  background-color: #d9d9d9;
+  background-color: #f0f4f9;
   border: none;
   padding: 10px;
   outline: none;
@@ -140,7 +140,10 @@ const BtnWrapper = styled.div`
     width: 200px;
     height: 62px;
     border-radius: 15px;
-    background-color: #d9d9d9;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background-color: #0051cb;
     border: none;
   }
 `;
@@ -154,9 +157,8 @@ const TimeInput = styled.div`
   align-items: center;
   width: 300px;
   height: 350px;
+  background-color: #f0f4f9;
   border-radius: 20px;
-  background-color: #d9d9d9;
-
   .choice {
     margin-bottom: 43px;
   }
@@ -175,6 +177,7 @@ const AM = styled.button`
   height: 30px;
   outline: none;
   border: none;
+  background-color: white;
   border-radius: 15px 0px 0px 15px;
 `;
 
