@@ -12,6 +12,7 @@ import UserHomeWorkingPage from "./pages/homeWorking/UserHomeWorkingPage";
 import UserReportPage from "./pages/homeWorking/UserReportPage";
 import UserMeetingPage from "./pages/meeting/UserMeetingPage";
 import CoffeeChatPage from "./pages/coffee/CoffeeChatPage";
+import UserVacationPage from "./pages/Vacation/UserVacationPage";
 
 const Router = () => {
   return (
@@ -30,6 +31,7 @@ const Router = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signUp" element={<SignUpPage />} />
         <Route path="/coffee" element={<CoffeeChatPage />} />
+        <Route path="/vacation" element={<UserVacationPage />} />
       </Routes>
     </BrowserRouter>
   );
