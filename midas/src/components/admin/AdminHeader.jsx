@@ -21,7 +21,7 @@ const AdminHeader = () => {
         >
           <p id="home">재택 근무</p>
         </Link>
-        <p id="paradice">휴가 및 연차</p>
+        <p id="paradice">휴가</p>
         <p id="intro">안녕하세요 관리자</p>
         <p id="name">OOO 님</p>
       </Header>

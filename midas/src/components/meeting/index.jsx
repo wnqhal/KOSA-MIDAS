@@ -8,24 +8,41 @@ const Meeting = () => {
       <AdminHeader />
       <Title>회의</Title>
       <hr />
-      <SettingWrapper>
-        <DateWrapper>
-          <p>회의 날짜</p>
-          <input type={"text"} placeholder="22/11/04 09:00" />
-        </DateWrapper>
-        <TeamWrapper>
-          <p>팀</p>
-          <input type={"text"} placeholder="인사1팀" />
-        </TeamWrapper>
-        <PlaceWrapper>
-          <p>장소</p>
-          <input type={"text"} placeholder="1층 카페테리아" />
-        </PlaceWrapper>
-      </SettingWrapper>
-      <ContentInput placeholder="내용" />
-      <BtnDiv>
-        <SubmitButton>회의 신청하기</SubmitButton>
-      </BtnDiv>
+      <InputWrapper>
+        <InputWrapperOne>
+          <div className="one">
+            <div className="date">
+              <p>회의 날짜</p>
+              <div className="showDate">
+                <p>2022 / 11 / 05</p>
+              </div>
+            </div>
+            <div className="people">
+              <p>참석자</p>
+              <div className="showPeople">2팀</div>
+            </div>
+          </div>
+          <MeetingContent placeholder="회의 안건" />
+          <BtnWrapper>
+            <button>회의 신청하기</button>
+          </BtnWrapper>
+        </InputWrapperOne>
+        <InputWrapperTwo>
+          <TimeInput>
+            <div className="choice">
+              <AM>AM</AM>
+              <PM>PM</PM>
+            </div>
+            <HourInput type={"text"} placeholder="시간을 입력해주세요" />
+            <MinutInput type={"text"} placeholder="분을 입력해주세요" />
+            <hr />
+            <TimeBtnWrapper>
+              <button className="cancle">취소</button>
+              <button className="ok">확인</button>
+            </TimeBtnWrapper>
+          </TimeInput>
+        </InputWrapperTwo>
+      </InputWrapper>
     </Wrapper>
   );
 };
@@ -35,112 +52,183 @@ const Wrapper = styled.div`
     width: 1150px;
     margin: 0;
     margin-left: 180px;
+    margin-bottom: 55px;
   }
 `;
 
 const Title = styled.h1`
-  margin: 40px 0 5px 180px;
+  margin: 120px 0 5px 180px;
 `;
 
-const DateWrapper = styled.div`
-  margin-top: 30px;
-  width: 400px;
-  height: 70px;
-  border-radius: 15px;
-  background-color: #d9d9d9;
+const InputWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  > p {
-    margin-right: 50px;
-  }
-  > input {
-    width: 220px;
-    height: 35px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    text-align: center;
-  }
 `;
 
-const TeamWrapper = styled.div`
-  margin-top: 30px;
-  width: 300px;
-  height: 70px;
-  border-radius: 15px;
-  margin-left: 50px;
-  background-color: #d9d9d9;
+const InputWrapperOne = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  > p {
+  flex-direction: column;
+  .one {
+    display: flex;
+  }
+
+  .date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 385px;
+    height: 60px;
+    margin-left: 180px;
     margin-right: 30px;
+    border-radius: 15px;
+    background-color: #d9d9d9;
+    .showDate {
+      width: 120px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border-radius: 15px;
+      margin-left: 80px;
+    }
   }
-  > input {
-    width: 150px;
-    height: 35px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    text-align: center;
-  }
-`;
 
-const PlaceWrapper = styled.div`
-  margin-top: 30px;
-  width: 300px;
-  height: 70px;
-  border-radius: 15px;
-  margin-left: 50px;
-  background-color: #d9d9d9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  > p {
+  .people {
+    display: flex;
+    align-items: center;
+    width: 385px;
+    height: 70px;
     margin-right: 30px;
-  }
-  > input {
-    width: 150px;
-    height: 35px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    text-align: center;
+    border-radius: 15px;
+    background-color: #d9d9d9;
+    > p {
+      margin-left: 70px;
+    }
+    .showPeople {
+      width: 120px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      margin-left: 30px;
+    }
   }
 `;
 
-const SettingWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const ContentInput = styled.textarea`
-  margin-left: 210px;
-  width: 1070px;
+const MeetingContent = styled.textarea`
+  width: 780px;
+  height: 140px;
+  margin-left: 180px;
+  margin-top: 30px;
+  border-radius: 15px;
+  background-color: #d9d9d9;
+  border: none;
   padding: 10px;
-  margin-top: 30px;
-  height: 410px;
-  border-radius: 10px;
   outline: none;
   resize: none;
 `;
 
-const BtnDiv = styled.div`
-  margin-left: 200px;
-  margin-right: 210px;
-  margin-top: 20px;
+const BtnWrapper = styled.div`
+  width: 800px;
+  margin-top: 30px;
+  margin-left: 180px;
   display: flex;
   justify-content: flex-end;
+  > button {
+    cursor: pointer;
+    width: 200px;
+    height: 62px;
+    border-radius: 15px;
+    background-color: #d9d9d9;
+    border: none;
+  }
 `;
 
-const SubmitButton = styled.button`
-  width: 200px;
-  height: 50px;
-  border: 1px solid #d9d9d9;
-  border-radius: 10px;
+const InputWrapperTwo = styled.div``;
+
+const TimeInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 350px;
+  border-radius: 20px;
   background-color: #d9d9d9;
-  cursor: pointer;
+
+  .choice {
+    margin-bottom: 43px;
+  }
+
+  > hr {
+    width: 300px;
+    height: 1px;
+    margin-bottom: 25px;
+    border: none;
+    background-color: white;
+  }
+`;
+
+const AM = styled.button`
+  width: 50px;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 15px 0px 0px 15px;
+`;
+
+const PM = styled.button`
+  width: 50px;
+  height: 30px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: #1c6de8;
+  border-radius: 0px 15px 15px 0px;
+`;
+
+const HourInput = styled.input`
+  width: 200px;
+  height: 36px;
+  padding-left: 6px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  border: none;
+  outline: none;
+`;
+
+const MinutInput = styled.input`
+  width: 200px;
+  height: 36px;
+  padding-left: 6px;
+  border-radius: 20px;
+  margin-bottom: 36px;
+  border: none;
+  outline: none;
+`;
+
+const TimeBtnWrapper = styled.div`
+  width: 262px;
+  display: flex;
+  justify-content: space-between;
+
+  .cancle {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  .ok {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #1c6de8;
+  }
 `;
 
 export default Meeting;
