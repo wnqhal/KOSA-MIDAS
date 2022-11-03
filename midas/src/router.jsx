@@ -1,5 +1,4 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-
 import AdminPage from "./pages/admin/AdminPage";
 import MeetingPage from "./pages/meeting/MeetingPage";
 import HomeWorkingPage from "./pages/homeWorking/HomeWorkingPage";
@@ -7,12 +6,14 @@ import HomeApprovalPage from "./pages/homeWorking/HomeApprovalPage";
 import HomeReportPage from "./pages/homeWorking/HomeReportPage";
 import AdminVacationPage from "./pages/Vacation/AdminVacationPage";
 import LoginPage from "./pages/login/LoginPage";
+import HomePage from "./pages/home/HomePage";
 import SignUpPage from "./pages/signUp/SignUpPage";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/meeting" element={<MeetingPage />} />
         <Route path="/admin-homeworking" element={<HomeWorkingPage />} />
