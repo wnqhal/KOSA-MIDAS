@@ -2,19 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const SignUp = () => {
   return (
     <Wrapper>
       <InputWrapper>
-        <Title>로그인</Title>
+        <Title>회원가입</Title>
         <hr />
+        <AuthName id="name" type="text" placeholder="이름" />
         <AuthInput id="id" type="text" placeholder="아이디" />
         <AuthInput id="password" type="password" placeholder="비밀번호" />
-        <AuthButton>로그인</AuthButton>
+        <AuthButton>회원가입</AuthButton>
         <Flex>
-          <NoID>아이디가 없으신가요?</NoID>
-          <Link to="/signUp">
-            <SignUpNow>회원가입 하기</SignUpNow>
+          <HaveID>이미 아이디가 있으신가요?</HaveID>
+          <Link to="/login">
+            <LoginNow>로그인 하기</LoginNow>
           </Link>
         </Flex>
       </InputWrapper>
@@ -22,18 +23,39 @@ const Login = () => {
   );
 };
 
+const AuthName = styled.input`
+  width: 400px;
+  height: 45px;
+  border-radius: 15px;
+  background-color: #f0f4f9;
+  padding: 5px 0px 5px 16px;
+  border: none;
+  outline: none;
+  margin-bottom: 40px;
+`;
+
+const AuthInput = styled.input`
+  width: 400px;
+  height: 45px;
+  padding: 5px 0px 5px 16px;
+  border-radius: 15px;
+  background-color: #f0f4f9;
+  border: none;
+  outline: none;
+`;
+
 const Flex = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-const NoID = styled.div`
+const HaveID = styled.div`
   text-align: center;
   font-size: 13px;
   margin-right: 3px;
 `;
 
-const SignUpNow = styled.div`
+const LoginNow = styled.div`
   color: #0051cb;
   text-align: center;
   font-size: 13px;
@@ -71,16 +93,6 @@ const Title = styled.h1`
   color: black;
 `;
 
-const AuthInput = styled.input`
-  width: 400px;
-  height: 45px;
-  padding: 5px 0px 5px 16px;
-  border-radius: 15px;
-  background-color: #f0f4f9;
-  border: none;
-  outline: none;
-`;
-
 const AuthButton = styled.button`
   width: 421px;
   height: 60px;
@@ -91,4 +103,4 @@ const AuthButton = styled.button`
   margin-bottom: 30px;
 `;
 
-export default Login;
+export default SignUp;
