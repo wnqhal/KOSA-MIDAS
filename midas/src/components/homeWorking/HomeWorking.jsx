@@ -40,9 +40,14 @@ const HomeWorking = () => {
           </ApprovalWrapper>
         ) : (
           <ReportWrapper>
-            <ReportItem>
-              <p>OOO님의 재택 근무 보고서</p>
-            </ReportItem>
+            <Link
+              to="/homereport/1"
+              style={{ textDecoration: "none", color: "#000000" }}
+            >
+              <ReportItem>
+                <p>OOO님의 재택 근무 보고서</p>
+              </ReportItem>
+            </Link>
           </ReportWrapper>
         )}
       </ContentWrapper>
