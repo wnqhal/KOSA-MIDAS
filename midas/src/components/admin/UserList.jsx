@@ -1,39 +1,91 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import customAxios from "../../api";
-import User from "./User";
+import menu from "../../assets/img/menu.svg";
 
 const UserList = () => {
-  useEffect(() => {
-    customAxios.get("/");
-  }, []);
+  const [data, setData] = useState({
+    name: "전영준",
+    team: "2팀",
+  });
+  const [modal, setModal] = useState(false);
+
+  const { name, team } = data;
+
+  const onClickModal = () => {
+    setModal(!modal);
+    setData({
+      name: name,
+      team: team,
+    });
+  };
+
+  const onChangeUser = (e) => {
+    const { value, name } = e.target;
+    console.log(data);
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
 
   return (
     <Wrapper>
-      <TypeMenu>
-        <div className="show">
-          <p id="name">이름</p>
-          <p id="team">팀</p>
-          <p id="state">상태</p>
-        </div>
-        <Dropdown>
-          MENU
-          <Dropcontent>
-            <Content>출근</Content>
-            <Content>자리 비움</Content>
-            <Content>재택 근무</Content>
-            <Content>퇴근</Content>
-          </Dropcontent>
-        </Dropdown>
-        <div className="search">
-          <input type={"text"} placeholder="사원 검색" />
-          <button>검색</button>
-        </div>
-      </TypeMenu>
-      <UserListWrapper>
-        <User />
-      </UserListWrapper>
+      {modal ? (
+        <ModalBox>
+          <ModalContent>
+            <p>유저 수정</p>
+            <input
+              onChange={onChangeUser}
+              name="name"
+              id="name"
+              placeholder="이름 수정"
+              defaultValue={name}
+            />
+            <input
+              onChange={onChangeUser}
+              name="team"
+              id="team"
+              placeholder="팀 수정"
+              defaultValue={team}
+            />
+            <button onClick={onClickModal}>수정</button>
+          </ModalContent>
+        </ModalBox>
+      ) : (
+        <>
+          {" "}
+          <TypeMenu>
+            <div className="show">
+              <p id="name">이름</p>
+              <p id="team">팀</p>
+              <p id="state">상태</p>
+            </div>
+            <Dropdown>
+              MENU
+              <Dropcontent>
+                <Content>출근</Content>
+                <Content>자리 비움</Content>
+                <Content>재택 근무</Content>
+                <Content>퇴근</Content>
+              </Dropcontent>
+            </Dropdown>
+            <div className="search">
+              <input type={"text"} placeholder="사원 검색" />
+              <button>검색</button>
+            </div>
+          </TypeMenu>
+          <UserListWrapper>
+            <UserItem onClick={onClickModal}>
+              <div>
+                <p id="name">{data.name}</p>
+                <p id="team">{data.team}</p>
+                <p id="state">출근</p>
+              </div>
+              <img src={menu} alt="menu" />
+            </UserItem>
+          </UserListWrapper>
+        </>
+      )}
     </Wrapper>
   );
 };
@@ -125,6 +177,83 @@ const UserListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+
+const UserItem = styled.div`
+  cursor: pointer;
+  width: 1090px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 20px;
+  border: 1px solid #0051cb;
+  border-radius: 10px;
+  margin-left: 190px;
+  margin-top: 20px;
+  > div {
+    display: flex;
+  }
+  #name {
+    font-size: 18px;
+    margin-right: 60px;
+  }
+  #team {
+    font-size: 18px;
+    margin-right: 70px;
+  }
+  #state {
+    font-size: 18px;
+  }
+  > img {
+  }
+`;
+
+const ModalBox = styled.div`
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ModalContent = styled.div`
+  width: 600px;
+  height: 600px;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > p {
+    margin-top: 150px;
+  }
+  #name {
+    width: 318px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: #f0f4f9;
+  }
+  #team {
+    width: 318px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #f0f4f9;
+  }
+  > button {
+    width: 330px;
+    cursor: pointer;
+    border-radius: 15px;
+    height: 50px;
+    border: none;
+    outline: none;
+  }
 `;
 
 export default UserList;

@@ -15,6 +15,7 @@ const UserMeeting = () => {
 
   const onClickSubmit = () => {
     alert("회의가 신청되었습니다.");
+    window.location.replace("/meeting");
   };
 
   return (
