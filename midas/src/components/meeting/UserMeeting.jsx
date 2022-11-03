@@ -185,6 +185,7 @@ const TimeInput = styled.div`
 `;
 
 const AM = styled.button`
+  cursor: pointer;
   width: 50px;
   height: 30px;
   outline: none;
@@ -194,6 +195,7 @@ const AM = styled.button`
 `;
 
 const PM = styled.button`
+  cursor: pointer;
   width: 50px;
   height: 30px;
   outline: none;
@@ -229,6 +231,7 @@ const TimeBtnWrapper = styled.div`
   justify-content: space-between;
 
   .cancle {
+    cursor: pointer;
     width: 120px;
     height: 40px;
     border: none;
@@ -237,6 +240,7 @@ const TimeBtnWrapper = styled.div`
   }
 
   .ok {
+    cursor: pointer;
     width: 120px;
     height: 40px;
     border: none;

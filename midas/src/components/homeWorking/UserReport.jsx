@@ -111,6 +111,7 @@ const BtnWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   > button {
+    cursor: pointer;
     width: 200px;
     height: 52px;
     margin-top: 30px;
