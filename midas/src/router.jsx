@@ -1,9 +1,12 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import AdminPage from "./pages/admin/AdminPage";
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Routes></Routes>
+      <Routes>
+        <Route path="/admin" element={<AdminPage />} />
+      </Routes>
     </BrowserRouter>
   );
 };
