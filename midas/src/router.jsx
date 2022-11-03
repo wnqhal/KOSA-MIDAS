@@ -7,6 +7,7 @@ import HomeReportPage from "./pages/homeWorking/HomeReportPage";
 import AdminVacationPage from "./pages/Vacation/AdminVacationPage";
 import LoginPage from "./pages/login/LoginPage";
 import HomePage from "./pages/home/HomePage";
+import SignUpPage from "./pages/signUp/SignUpPage";
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path="/homereport/:id" element={<HomeReportPage />} />
         <Route path="/admin-vacation" element={<AdminVacationPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signUp" element={<SignUpPage />} />
       </Routes>
     </BrowserRouter>
   );
