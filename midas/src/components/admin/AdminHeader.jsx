@@ -1,12 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const AdminHeader = () => {
   return (
     <Wrapper>
       <Header>
-        <p id="title">프로젝트 이름</p>
-        <p id="meeting">회의</p>
+        <Link to="/admin" style={{ textDecoration: "none", color: "#000000" }}>
+          <p id="title">프로젝트 이름</p>
+        </Link>
+        <Link
+          to="/meeting"
+          style={{ textDecoration: "none", color: "#000000" }}
+        >
+          <p id="meeting">회의</p>
+        </Link>
         <p id="home">재택 근무</p>
         <p id="paradice">휴가 및 연차</p>
         <p id="intro">안녕하세요 관리자</p>
