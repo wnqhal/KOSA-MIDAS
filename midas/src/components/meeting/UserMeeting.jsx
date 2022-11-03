@@ -4,6 +4,19 @@ import MenuBar from "../menu";
 import StartBar from "../start";
 
 const UserMeeting = () => {
+  const onClickTime = () => {
+    alert("시간이 입력되었습니다.");
+  };
+
+  const onClickNoTime = () => {
+    alert("취소되었습니다.");
+    window.location.replace("/meeting");
+  };
+
+  const onClickSubmit = () => {
+    alert("회의가 신청되었습니다.");
+  };
+
   return (
     <Wrapper>
       <MenuBar />
@@ -18,17 +31,17 @@ const UserMeeting = () => {
               <div className="date">
                 <p>회의 날짜</p>
                 <div className="showDate">
-                  <p>2022 / 11 / 05</p>
+                  <input type={"text"} placeholder="yymmdd" />
                 </div>
               </div>
               <div className="people">
                 <p>참석자</p>
-                <div className="showPeople">2팀</div>
+                <input className="showPeople" />
               </div>
             </div>
             <MeetingContent placeholder="회의 안건" />
             <BtnWrapper>
-              <button>회의 신청하기</button>
+              <button onClick={onClickSubmit}>회의 신청하기</button>
             </BtnWrapper>
           </InputWrapperOne>
           <InputWrapperTwo>
@@ -41,8 +54,12 @@ const UserMeeting = () => {
               <MinutInput type={"text"} placeholder="분을 입력해주세요" />
               <hr />
               <TimeBtnWrapper>
-                <button className="cancle">취소</button>
-                <button className="ok">확인</button>
+                <button className="cancle" onClick={onClickNoTime}>
+                  취소
+                </button>
+                <button className="ok" onClick={onClickTime}>
+                  확인
+                </button>
               </TimeBtnWrapper>
             </TimeInput>
           </InputWrapperTwo>
@@ -104,6 +121,11 @@ const InputWrapperOne = styled.div`
       background-color: white;
       border-radius: 15px;
       margin-left: 40px;
+      > input {
+        width: 60px;
+        border: none;
+        outline: none;
+      }
     }
   }
 
@@ -119,8 +141,10 @@ const InputWrapperOne = styled.div`
       margin-left: 15px;
     }
     .showPeople {
-      width: 120px;
-      height: 50px;
+      border: none;
+      outline: none;
+      width: 80px;
+      height: 35px;
       display: flex;
       justify-content: center;
       align-items: center;

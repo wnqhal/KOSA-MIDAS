@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import customAxios from "../../api";
 
@@ -10,13 +10,13 @@ const SignUp = () => {
     user_id: "",
     password: "",
   });
-
+  const navigate = useNavigate();
   const { name, user_id, password } = data;
 
   const onClickSign = () => {
     customAxios
       .post("/accounts", { name: name, user_id: user_id, password: password })
-      .then((res) => alert("회원가입에 성공하셨습니다."))
+      .then((res) => navigate("/login"))
       .catch((res) => console.log(res));
   };
 

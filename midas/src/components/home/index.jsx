@@ -12,7 +12,7 @@ const Home = () => {
         <HeaderWrapper>
           <NameWrapper>
             <p>오늘도 좋은 하루 되세요</p>
-            <p>OOO 님</p>
+            <p>전영준 님</p>
           </NameWrapper>
           <TimeWrapper>
             <img src={time} alt="" />
@@ -23,7 +23,7 @@ const Home = () => {
         <ContentWrapper>
           <GraphContent>
             <p>금주의 업무 데이터</p>
-            <div></div>
+            <div>금주의 업무 데이터가 아직 쌓이지 않았어요 ㅠㅠ</div>
           </GraphContent>
           <MeetContent>
             <p>회의 일정</p>
@@ -76,6 +76,9 @@ const ContentWrapper = styled.div``;
 
 const GraphContent = styled.div`
   > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 780px;
     height: 230px;
     border-radius: 15px;

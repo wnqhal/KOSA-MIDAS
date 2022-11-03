@@ -1,13 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import AdminHeader from "../admin/AdminHeader";
+import { useNavigate } from "react-router-dom";
 
 const HomeReport = () => {
+  const navigate = useNavigate();
+  const onClick = () => {
+    alert("보고서가 확인 되었습니다.");
+    navigate("/admin");
+  };
+
   return (
     <Wrapper>
       <AdminHeader />
       <Header>
-        <Title>OOO님의 재택 근무 보고서</Title>
+        <Title>남주빈님의 재택 근무 보고서</Title>
       </Header>
       <DescriptionDiv>
         <DateWrapper>
@@ -17,11 +24,11 @@ const HomeReport = () => {
           </div>
         </DateWrapper>
         <ChoiceDiv>
-          <ApprovalBtn>확인</ApprovalBtn>
+          <ApprovalBtn onClick={onClick}>확인</ApprovalBtn>
         </ChoiceDiv>
       </DescriptionDiv>
       <hr />
-      <ReasonWrapper></ReasonWrapper>
+      <ReasonWrapper>- 서버 로그인 작업을 하였습니다.</ReasonWrapper>
     </Wrapper>
   );
 };
@@ -87,7 +94,8 @@ const ApprovalBtn = styled.button`
 
 const ReasonWrapper = styled.div`
   margin-left: 100px;
-  width: 1310px;
+  padding: 10px;
+  width: 1295px;
   height: 500px;
   background-color: #f0f4f9;
 `;

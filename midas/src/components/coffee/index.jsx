@@ -4,6 +4,11 @@ import MenuBar from "../menu";
 import StartBar from "../start";
 
 const CoffeeChat = () => {
+  const onClickSubmit = () => {
+    alert("커피챗이 신청되었습니다!");
+    window.location.replace("/coffee");
+  };
+
   return (
     <Wrapper>
       <MenuBar />
@@ -23,7 +28,7 @@ const CoffeeChat = () => {
           </Content>
         </ContentWrapper>
         <BtnWrapper>
-          <button>커피챗 신청하기</button>
+          <button onClick={onClickSubmit}>커피챗 신청하기</button>
         </BtnWrapper>
       </MainWrapper>
       <StartBar />

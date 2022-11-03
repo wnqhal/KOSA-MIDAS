@@ -1,10 +1,13 @@
 import React from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
+import customAxios from "../../api";
 import User from "./User";
 
 const UserList = () => {
-  useEffect(() => {}, []);
+  useEffect(() => {
+    customAxios.get("/");
+  }, []);
 
   return (
     <Wrapper>

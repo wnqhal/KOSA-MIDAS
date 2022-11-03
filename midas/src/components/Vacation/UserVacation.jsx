@@ -8,7 +8,12 @@ const UserVacation = () => {
   const [state, setState] = useState();
   const [cur, setCur] = useState();
 
-  const onClickAge = (num) => {
+  const Submit = () => {
+    alert("휴가가 신청되었습니다.");
+    window.location.replace("/vacation");
+  };
+
+  const onClickBlock = (num) => {
     setState(false);
     setCur(num);
   };
@@ -36,7 +41,7 @@ const UserVacation = () => {
           <ContentBox>
             {BtnData.btnList.map((data, index) => (
               <ContentItem
-                onClick={() => onClickAge((index + 1) * 10)}
+                onClick={() => onClickBlock((index + 1) * 10)}
                 state={!((index + 1) * 10 === cur)}
               >
                 {data.name}
@@ -45,7 +50,7 @@ const UserVacation = () => {
           </ContentBox>
         </ContentWrapper>
         <BtnWrapper>
-          <SubmitBtn>제출하기</SubmitBtn>
+          <SubmitBtn onClick={Submit}>제출하기</SubmitBtn>
         </BtnWrapper>
       </MainWrapper>
       <StartBar />

@@ -1,24 +1,47 @@
 import React from "react";
+import { useState } from "react";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 
 const StartBar = () => {
+  const [work, setWork] = useState(false);
+  const [coffee, setCoffee] = useState(false);
+
+  const onClickWork = () => {
+    setWork(!work);
+    alert(`${work ? "퇴근" : "출근 "} 하셨습니다`);
+  };
+
+  const onCoffee = () => {
+    alert("커피챗을 수락하셨습니다!");
+    setCoffee(true);
+  };
+
+  const onNoCoffee = () => {
+    alert("커피챗을 거절하셨습니다 ㅠㅠ");
+  };
+
   return (
     <Wrapper>
       <LengthHR />
       <MenuWrapper>
         <StateDropDown>
-          <p>출근 하기</p>
-          <button>출근</button>
+          <p>{work ? "퇴근" : "출근"} 하기</p>
+          <button onClick={onClickWork}>{work ? "퇴근" : "출근"}</button>
         </StateDropDown>
         <CoffeeChatWrapper>
           <p>커피챗 신청</p>
           <CoffeeContent>
-            <CoffeeChatItem>
-              <p>OOO님의 커피챗 신청</p>
-            </CoffeeChatItem>
+            {coffee ? (
+              ""
+            ) : (
+              <CoffeeChatItem>
+                <p>주보미님의 커피챗 신청</p>
+              </CoffeeChatItem>
+            )}
             <CoffeeBtnWrapper>
-              <CoffeeBtn>수락</CoffeeBtn>
-              <CoffeeBtn>거절</CoffeeBtn>
+              <CoffeeBtn onClick={onCoffee}>수락</CoffeeBtn>
+              <CoffeeBtn onClick={onNoCoffee}>거절</CoffeeBtn>
             </CoffeeBtnWrapper>
           </CoffeeContent>
         </CoffeeChatWrapper>

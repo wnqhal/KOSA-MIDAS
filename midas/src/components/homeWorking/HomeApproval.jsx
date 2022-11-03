@@ -1,13 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import AdminHeader from "../admin/AdminHeader";
+import { useNavigate } from "react-router-dom";
 
 const HomeApproval = () => {
+  const navigate = useNavigate();
+
+  const ClickNo = () => {
+    alert("재택 근무가 거절되었습니다.");
+    navigate("/admin");
+  };
+
+  const ClickYes = () => {
+    alert("재택 근무가 승인되었습니다.");
+    navigate("/admin");
+  };
+
   return (
     <Wrapper>
       <AdminHeader />
       <Header>
-        <Title>OOO님의 재택 근무 신청</Title>
+        <Title>남주빈님의 재택 근무 신청</Title>
       </Header>
       <DescriptionDiv>
         <DateWrapper>
@@ -17,12 +30,12 @@ const HomeApproval = () => {
           </div>
         </DateWrapper>
         <ChoiceDiv>
-          <ApprovalBtn>승인</ApprovalBtn>
-          <FailBtn>거절</FailBtn>
+          <ApprovalBtn onClick={ClickYes}>승인</ApprovalBtn>
+          <FailBtn onClick={ClickNo}>거절</FailBtn>
         </ChoiceDiv>
       </DescriptionDiv>
       <hr />
-      <ReasonWrapper></ReasonWrapper>
+      <ReasonWrapper>안녕하십니까 팀장님 다름이 아니라...</ReasonWrapper>
     </Wrapper>
   );
 };
@@ -99,8 +112,9 @@ const FailBtn = styled.button`
 `;
 
 const ReasonWrapper = styled.div`
+  padding: 10px;
   margin-left: 100px;
-  width: 1310px;
+  width: 1295px;
   height: 500px;
   background-color: #f0f4f9;
 `;

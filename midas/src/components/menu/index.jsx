@@ -13,7 +13,7 @@ const MenuBar = () => {
     <Wrapper>
       <ProfileWrapper>
         <img src={people} alt="" />
-        <p>OOO</p>
+        <p>전영준</p>
       </ProfileWrapper>
       <MenuWrapper>
         <Link to="/" style={{ textDecoration: "none", color: "#000000" }}>
@@ -32,7 +32,7 @@ const MenuBar = () => {
           </MenuItem>
         </Link>
         <Link
-          to="/user-meeting"
+          to="/meeting"
           style={{ textDecoration: "none", color: "#000000" }}
         >
           <MenuItem>
@@ -47,7 +47,7 @@ const MenuBar = () => {
           </MenuItem>
         </Link>
         <Link
-          to="/varcation"
+          to="/vacation"
           style={{ textDecoration: "none", color: "#000000" }}
         >
           <MenuItem>

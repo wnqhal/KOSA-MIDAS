@@ -6,7 +6,7 @@ const User = () => {
   return (
     <Wrapper>
       <div>
-        <p id="name">전ㅇㅇ</p>
+        <p id="name">전영준</p>
         <p id="team">2팀</p>
         <p id="state">출근</p>
       </div>

@@ -2,8 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import MenuBar from "../menu";
 import StartBar from "../start";
+import { Link } from "react-router-dom";
 
 const UserReport = () => {
+  const onClickSubmit = () => {
+    alert("재택 근무 보고서를 제출하셨습니다.");
+    window.location.replace("/report");
+  };
+
   return (
     <Wrapper>
       <MenuBar />
@@ -16,17 +22,22 @@ const UserReport = () => {
           <DateWrapper>
             <p>신청 날짜</p>
             <div className="dateDiv">
-              <p>2022 / 11 / 04</p>
+              <input type={"text"} placeholder="yymmdd" />
             </div>
           </DateWrapper>
           <div className="aplliDiv">
             <p id="description">재택근무를 신청하시겠어요?</p>
-            <p id="application">재택근무 신청하기</p>
+            <Link
+              to="/homeworking"
+              style={{ textDecoration: "none", color: "#000000" }}
+            >
+              <p id="application">재택근무 신청하기</p>
+            </Link>
           </div>
         </DescriptionDiv>
         <ContentArea placeholder="내용" />
         <BtnWrapper>
-          <button>제출하기</button>
+          <button onClick={onClickSubmit}>제출하기</button>
         </BtnWrapper>
       </MainWrapper>
       <StartBar />
@@ -76,6 +87,10 @@ const DateWrapper = styled.div`
     height: 30px;
     background-color: white;
     margin-right: 20px;
+    > input {
+      border: none;
+      outline: none;
+    }
   }
 `;
 

@@ -1,8 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import AdminHeader from "../admin/AdminHeader";
+import { useNavigate } from "react-router-dom";
 
 const AdminVacation = () => {
+  const navigate = useNavigate();
+  const onSubmit = () => {
+    alert("휴가가 승인되었습니다.");
+    navigate("/admin");
+  };
+
   return (
     <Wrapper>
       <AdminHeader />
@@ -11,8 +18,8 @@ const AdminVacation = () => {
         <hr />
         <VacationList>
           <VacationItem>
-            <VacationName>OOO님의 가족 돌봄 휴가</VacationName>
-            <VacationBtn>승인</VacationBtn>
+            <VacationName>손재민님의 가족 돌봄 휴가</VacationName>
+            <VacationBtn onClick={onSubmit}>승인</VacationBtn>
           </VacationItem>
         </VacationList>
       </ContentWrapper>

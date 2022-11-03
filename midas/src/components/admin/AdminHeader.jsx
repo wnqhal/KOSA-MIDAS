@@ -1,8 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const AdminHeader = () => {
+  const [work, setWork] = useState(false);
+
+  const onSubmit = () => {
+    setWork(!work);
+    if (work === false) {
+      alert("최문석 관리자님 출근하셨습니다.");
+    } else {
+      alert("최문석 관리자님 퇴근하셨습니다.");
+    }
+  };
+
   return (
     <Wrapper>
       <Header>
@@ -10,7 +22,7 @@ const AdminHeader = () => {
           <p id="title">프로젝트 이름</p>
         </Link>
         <Link
-          to="/meeting"
+          to="/admin-meeting"
           style={{ textDecoration: "none", color: "#000000" }}
         >
           <p id="meeting">회의</p>
@@ -28,8 +40,8 @@ const AdminHeader = () => {
           <p id="paradice">휴가</p>
         </Link>
         <p id="intro">안녕하세요 관리자</p>
-        <p id="name">OOO 님</p>
-        <button>출근</button>
+        <p id="name">최문석 님</p>
+        <button onClick={onSubmit}>{work ? "퇴근" : "출근"}</button>
       </Header>
       <hr />
     </Wrapper>
@@ -67,9 +79,10 @@ const Header = styled.header`
   }
   #name {
     font-size: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   > button {
+    cursor: pointer;
     width: 50px;
     height: 30px;
     border-radius: 5px;
