@@ -1,8 +1,11 @@
 import React from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import User from "./User";
 
 const UserList = () => {
+  useEffect(() => {}, []);
+
   return (
     <Wrapper>
       <TypeMenu>

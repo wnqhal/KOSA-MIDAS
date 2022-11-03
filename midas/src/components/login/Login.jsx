@@ -1,16 +1,57 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import customAxios from "../../api";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [data, setData] = useState({
+    user_id: "",
+    password: "",
+  });
+  const navigate = useNavigate();
+
+  const { user_id, password } = data;
+
+  const onClickLogin = () => {
+    customAxios
+      .post("/login", { user_id: user_id, password: password })
+      .then(() => navigate("/"))
+      .catch((res) => console.log(res));
+  };
+
+  const onChangeLogin = (e) => {
+    const { value, name } = e.target;
+    console.log(data);
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
   return (
     <Wrapper>
       <InputWrapper>
         <Title>로그인</Title>
         <hr />
-        <AuthInput id="id" type="text" placeholder="아이디" />
-        <AuthInput id="password" type="password" placeholder="비밀번호" />
-        <AuthButton>로그인</AuthButton>
+        <AuthInput
+          name="user_id"
+          value={user_id}
+          id="id"
+          type="text"
+          placeholder="아이디"
+          onChange={onChangeLogin}
+        />
+        <AuthInput
+          name="password"
+          value={password}
+          id="password"
+          type="password"
+          placeholder="비밀번호"
+          onChange={onChangeLogin}
+        />
+        <AuthButton onClick={onClickLogin}>로그인</AuthButton>
         <Flex>
           <NoID>아이디가 없으신가요?</NoID>
           <Link to="/signUp">

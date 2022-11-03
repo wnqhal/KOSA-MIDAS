@@ -1,17 +1,64 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import customAxios from "../../api";
 
 const SignUp = () => {
+  const [data, setData] = useState({
+    name: "",
+    user_id: "",
+    password: "",
+  });
+
+  const { name, user_id, password } = data;
+
+  const onClickSign = () => {
+    customAxios
+      .post("/accounts", { name: name, user_id: user_id, password: password })
+      .then((res) => alert("회원가입에 성공하셨습니다."))
+      .catch((res) => console.log(res));
+  };
+
+  const onChangeSign = (e) => {
+    const { value, name } = e.target;
+    console.log(data);
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
   return (
     <Wrapper>
       <InputWrapper>
         <Title>회원가입</Title>
         <hr />
-        <AuthName id="name" type="text" placeholder="이름" />
-        <AuthInput id="id" type="text" placeholder="아이디" />
-        <AuthInput id="password" type="password" placeholder="비밀번호" />
-        <AuthButton>회원가입</AuthButton>
+        <AuthName
+          name="name"
+          value={name}
+          id="name"
+          type="text"
+          placeholder="이름"
+          onChange={onChangeSign}
+        />
+        <AuthInput
+          name="user_id"
+          value={user_id}
+          id="id"
+          type="text"
+          placeholder="아이디"
+          onChange={onChangeSign}
+        />
+        <AuthInput
+          name="password"
+          value={password}
+          id="password"
+          type="password"
+          placeholder="비밀번호"
+          onChange={onChangeSign}
+        />
+        <AuthButton onClick={onClickSign}>회원가입</AuthButton>
         <Flex>
           <HaveID>이미 아이디가 있으신가요?</HaveID>
           <Link to="/login">
