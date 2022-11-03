@@ -16,7 +16,10 @@ const SignUp = () => {
   const onClickSign = () => {
     customAxios
       .post("/accounts", { name: name, user_id: user_id, password: password })
-      .then((res) => navigate("/login"))
+      .then(() => {
+        alert("회원가입에 성공하셨습니다.");
+        navigate("/login");
+      })
       .catch((res) => console.log(res));
   };
 

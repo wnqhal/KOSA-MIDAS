@@ -17,7 +17,10 @@ const Login = () => {
   const onClickLogin = () => {
     customAxios
       .post("/login", { user_id: user_id, password: password })
-      .then(() => navigate("/"))
+      .then(() => {
+        alert("로그인에 성공하셨습니다.");
+        navigate("/");
+      })
       .catch((res) => console.log(res));
   };
 
