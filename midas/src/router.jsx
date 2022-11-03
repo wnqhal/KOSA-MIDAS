@@ -10,6 +10,7 @@ import HomePage from "./pages/home/HomePage";
 import SignUpPage from "./pages/signUp/SignUpPage";
 import UserHomeWorkingPage from "./pages/homeWorking/UserHomeWorkingPage";
 import UserReportPage from "./pages/homeWorking/UserReportPage";
+import UserMeetingPage from "./pages/meeting/UserMeetingPage";
 
 const Router = () => {
   return (
@@ -17,7 +18,8 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminPage />} />
-        <Route path="/meeting" element={<MeetingPage />} />
+        <Route path="/meeting" element={<UserMeetingPage />} />
+        <Route path="/admin-meeting" element={<MeetingPage />} />
         <Route path="/homeworking" element={<UserHomeWorkingPage />} />
         <Route path="/report" element={<UserReportPage />} />
         <Route path="/admin-homeworking" element={<HomeWorkingPage />} />
