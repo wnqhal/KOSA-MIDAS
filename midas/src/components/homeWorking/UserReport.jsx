@@ -3,13 +3,13 @@ import styled from "styled-components";
 import MenuBar from "../menu";
 import StartBar from "../start";
 
-const UserHomeWorking = () => {
+const UserReport = () => {
   return (
     <Wrapper>
       <MenuBar />
       <MainWrapper>
         <HeaderWrapper>
-          <p>재택근무 신청하기</p>
+          <p>재택근무 보고서 작성</p>
         </HeaderWrapper>
         <hr />
         <DescriptionDiv>
@@ -20,13 +20,13 @@ const UserHomeWorking = () => {
             </div>
           </DateWrapper>
           <div className="aplliDiv">
-            <p id="description">재택근무 보고서를 작성하시겠어요?</p>
-            <p id="application">재택근무 보고서 작성하기</p>
+            <p id="description">재택근무를 신청하시겠어요?</p>
+            <p id="application">재택근무 신청하기</p>
           </div>
         </DescriptionDiv>
         <ContentArea placeholder="내용" />
         <BtnWrapper>
-          <button>신청하기</button>
+          <button>제출하기</button>
         </BtnWrapper>
       </MainWrapper>
       <StartBar />
@@ -122,4 +122,4 @@ const BtnWrapper = styled.div`
   }
 `;
 
-export default UserHomeWorking;
+export default UserReport;
